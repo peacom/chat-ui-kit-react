@@ -34,6 +34,9 @@ var _AttachmentButton = _interopRequireDefault(
   require("../Buttons/AttachmentButton")
 );
 var _Scroll = _interopRequireDefault(require("../Scroll"));
+var _SuggestiontButton = _interopRequireDefault(
+  require("../Buttons/SuggestiontButton")
+);
 var _excluded = ["fancyScroll", "children", "forwardedRef"],
   _excluded2 = [
     "value",
@@ -48,9 +51,12 @@ var _excluded = ["fancyScroll", "children", "forwardedRef"],
     "sendDisabled",
     "sendOnReturnDisabled",
     "attachDisabled",
+    "suggestionDisabled",
     "sendButton",
     "attachButton",
+    "suggestionButton",
     "onAttachClick",
+    "onSuggestionClick",
   ];
 function _interopRequireDefault(obj) {
   return obj && obj.__esModule ? obj : { default: obj };
@@ -426,9 +432,12 @@ function MessageInputInner(_ref, ref) {
     sendDisabled = _ref.sendDisabled,
     sendOnReturnDisabled = _ref.sendOnReturnDisabled,
     attachDisabled = _ref.attachDisabled,
+    suggestionDisabled = _ref.suggestionDisabled,
     sendButton = _ref.sendButton,
     attachButton = _ref.attachButton,
+    suggestionButton = _ref.suggestionButton,
     onAttachClick = _ref.onAttachClick,
+    onSuggestionClick = _ref.onSuggestionClick,
     rest = _objectWithoutProperties(_ref, _excluded2);
   var scrollRef = (0, _react.useRef)();
   var msgRef = (0, _react.useRef)();
@@ -524,6 +533,20 @@ function MessageInputInner(_ref, ref) {
         className
       ),
     }),
+    suggestionButton === true &&
+      /*#__PURE__*/ _react["default"].createElement(
+        "div",
+        {
+          className: "".concat(cName, "__tools"),
+        },
+        /*#__PURE__*/ _react["default"].createElement(
+          _SuggestiontButton["default"],
+          {
+            onClick: onSuggestionClick,
+            disabled: disabled === true || suggestionDisabled === true,
+          }
+        )
+      ),
     attachButton === true &&
       /*#__PURE__*/ _react["default"].createElement(
         "div",
@@ -627,12 +650,15 @@ MessageInput.propTypes = {
   sendButton: _propTypes["default"].bool,
   /** Show add attachment button */
   attachButton: _propTypes["default"].bool,
+  suggestionButton: _propTypes["default"].bool,
   /** Disable add attachment button */
   attachDisabled: _propTypes["default"].bool,
+  suggestionDisabled: _propTypes["default"].bool,
   /**
    * onAttachClick handler
    */
   onAttachClick: _propTypes["default"].func,
+  onSuggestionClick: _propTypes["default"].func,
 };
 process.env.NODE_ENV !== "production"
   ? (MessageInputInner.propTypes = MessageInput.propTypes)
@@ -647,8 +673,11 @@ MessageInput.defaultProps = {
   autoFocus: false,
   sendButton: true,
   attachButton: true,
+  suggestionButton: true,
   attachDisabled: false,
+  suggestionDisabled: false,
   onAttachClick: _utils.noop,
+  onSuggestionClick: _utils.noop,
   onChange: _utils.noop,
   onSend: _utils.noop,
 };

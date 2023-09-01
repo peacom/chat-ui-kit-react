@@ -14,6 +14,7 @@ import ContentEditable from "../ContentEditable";
 import SendButton from "../Buttons/SendButton";
 import AttachmentButton from "../Buttons/AttachmentButton";
 import PerfectScrollbar from "../Scroll";
+import SuggestionButton from "../Buttons/SuggestiontButton";
 
 // Because container depends on fancyScroll
 // it must be wrapped in additional container
@@ -79,9 +80,12 @@ function MessageInputInner(
     sendDisabled,
     sendOnReturnDisabled,
     attachDisabled,
+    suggestionDisabled,
     sendButton,
     attachButton,
+    suggestionButton,
     onAttachClick,
+    onSuggestionClick,
     ...rest
   },
   ref
@@ -186,6 +190,14 @@ function MessageInputInner(
         className
       )}
     >
+      {suggestionButton === true && (
+        <div className={`${cName}__tools`}>
+          <SuggestionButton
+            onClick={onSuggestionClick}
+            disabled={disabled === true || suggestionDisabled === true}
+          />
+        </div>
+      )}
       {attachButton === true && (
         <div className={`${cName}__tools`}>
           <AttachmentButton
@@ -287,13 +299,19 @@ MessageInput.propTypes = {
   /** Show add attachment button */
   attachButton: PropTypes.bool,
 
+  suggestionButton: PropTypes.bool,
+
   /** Disable add attachment button */
   attachDisabled: PropTypes.bool,
+
+  suggestionDisabled: PropTypes.bool,
 
   /**
    * onAttachClick handler
    */
   onAttachClick: PropTypes.func,
+
+  onSuggestionClick: PropTypes.func,
 };
 
 MessageInputInner.propTypes = MessageInput.propTypes;
@@ -308,8 +326,11 @@ MessageInput.defaultProps = {
   autoFocus: false,
   sendButton: true,
   attachButton: true,
+  suggestionButton: true,
   attachDisabled: false,
+  suggestionDisabled: false,
   onAttachClick: noop,
+  onSuggestionClick: noop,
   onChange: noop,
   onSend: noop,
 };

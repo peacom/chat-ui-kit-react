@@ -31,9 +31,12 @@ var _excluded = ["fancyScroll", "children", "forwardedRef"],
     "sendDisabled",
     "sendOnReturnDisabled",
     "attachDisabled",
+    "suggestionDisabled",
     "sendButton",
     "attachButton",
+    "suggestionButton",
     "onAttachClick",
+    "onSuggestionClick",
   ];
 function _defineProperty(obj, key, value) {
   key = _toPropertyKey(key);
@@ -280,6 +283,7 @@ import ContentEditable from "../ContentEditable";
 import SendButton from "../Buttons/SendButton";
 import AttachmentButton from "../Buttons/AttachmentButton";
 import PerfectScrollbar from "../Scroll";
+import SuggestionButton from "../Buttons/SuggestiontButton";
 
 // Because container depends on fancyScroll
 // it must be wrapped in additional container
@@ -378,9 +382,12 @@ function MessageInputInner(_ref, ref) {
     sendDisabled = _ref.sendDisabled,
     sendOnReturnDisabled = _ref.sendOnReturnDisabled,
     attachDisabled = _ref.attachDisabled,
+    suggestionDisabled = _ref.suggestionDisabled,
     sendButton = _ref.sendButton,
     attachButton = _ref.attachButton,
+    suggestionButton = _ref.suggestionButton,
     onAttachClick = _ref.onAttachClick,
+    onSuggestionClick = _ref.onSuggestionClick,
     rest = _objectWithoutProperties(_ref, _excluded2);
   var scrollRef = useRef();
   var msgRef = useRef();
@@ -476,6 +483,17 @@ function MessageInputInner(_ref, ref) {
         className
       ),
     }),
+    suggestionButton === true &&
+      /*#__PURE__*/ React.createElement(
+        "div",
+        {
+          className: "".concat(cName, "__tools"),
+        },
+        /*#__PURE__*/ React.createElement(SuggestionButton, {
+          onClick: onSuggestionClick,
+          disabled: disabled === true || suggestionDisabled === true,
+        })
+      ),
     attachButton === true &&
       /*#__PURE__*/ React.createElement(
         "div",
@@ -572,12 +590,15 @@ MessageInput.propTypes = {
   sendButton: PropTypes.bool,
   /** Show add attachment button */
   attachButton: PropTypes.bool,
+  suggestionButton: PropTypes.bool,
   /** Disable add attachment button */
   attachDisabled: PropTypes.bool,
+  suggestionDisabled: PropTypes.bool,
   /**
    * onAttachClick handler
    */
   onAttachClick: PropTypes.func,
+  onSuggestionClick: PropTypes.func,
 };
 process.env.NODE_ENV !== "production"
   ? (MessageInputInner.propTypes = MessageInput.propTypes)
@@ -592,8 +613,11 @@ MessageInput.defaultProps = {
   autoFocus: false,
   sendButton: true,
   attachButton: true,
+  suggestionButton: true,
   attachDisabled: false,
+  suggestionDisabled: false,
   onAttachClick: noop,
+  onSuggestionClick: noop,
   onChange: noop,
   onSend: noop,
 };
