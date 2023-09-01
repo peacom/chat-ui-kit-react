@@ -27,5 +27,5 @@ export default {
   AddUserButton: AddUserButton,
   EllipsisButton: EllipsisButton,
   SendButton: SendButton,
-  AttachmentButton: AttachmentButton,
+  AttachmentButton: AttachmentButton
 };

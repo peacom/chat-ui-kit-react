@@ -10,45 +10,29 @@ export var MessageImageContent = function MessageImageContent(_ref) {
     className = _ref.className;
   var cName = "".concat(prefix, "-message__image-content");
   var style = {
-    width:
-      typeof width === "number"
-        ? "".concat(width, "px")
-        : typeof width === "string"
-        ? width
-        : undefined,
-    height:
-      typeof height === "number"
-        ? "".concat(height, "px")
-        : typeof height === "string"
-        ? height
-        : undefined,
+    width: typeof width === "number" ? "".concat(width, "px") : typeof width === "string" ? width : undefined,
+    height: typeof height === "number" ? "".concat(height, "px") : typeof height === "string" ? height : undefined
   };
-  return /*#__PURE__*/ React.createElement(
-    "div",
-    {
-      className: classNames(cName, className),
-    },
-    /*#__PURE__*/ React.createElement("img", {
-      src: src,
-      style: style,
-      alt: alt,
-    })
-  );
+  return /*#__PURE__*/React.createElement("div", {
+    className: classNames(cName, className)
+  }, /*#__PURE__*/React.createElement("img", {
+    src: src,
+    style: style,
+    alt: alt
+  }));
 };
 MessageImageContent.displayName = "Message.ImageContent";
-process.env.NODE_ENV !== "production"
-  ? (MessageImageContent.propTypes = {
-      /** Image source*/
-      src: PropTypes.string,
-      /** Image width */
-      width: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-      /** Image height */
-      height: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-      /** Alternate text for image */
-      alt: PropTypes.string,
-      /** Additional classes. */
-      className: PropTypes.string,
-    })
-  : void 0;
+process.env.NODE_ENV !== "production" ? MessageImageContent.propTypes = {
+  /** Image source*/
+  src: PropTypes.string,
+  /** Image width */
+  width: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  /** Image height */
+  height: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  /** Alternate text for image */
+  alt: PropTypes.string,
+  /** Additional classes. */
+  className: PropTypes.string
+} : void 0;
 MessageImageContent.defaultProps = {};
 export default MessageImageContent;

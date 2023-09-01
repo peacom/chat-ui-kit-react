@@ -16,6 +16,9 @@ export interface MessageInputProps {
   attachButton?: boolean;
   attachDisabled?: boolean;
   onAttachClick?: (evt: MouseEvent<HTMLButtonElement>) => void;
+  suggestionButton?: boolean;
+  suggestionDisabled?: boolean;
+  onSuggestionClick?: (evt: MouseEvent<HTMLButtonElement>) => void;
 }
 
 export declare const MessageInput: (props: ChatComponentPropsRef<MessageInputProps, "div">) => ReactElement;

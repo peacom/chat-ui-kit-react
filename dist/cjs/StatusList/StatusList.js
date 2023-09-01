@@ -1,26 +1,8 @@
 "use strict";
 
-function _typeof(o) {
-  "@babel/helpers - typeof";
-  return (
-    (_typeof =
-      "function" == typeof Symbol && "symbol" == typeof Symbol.iterator
-        ? function (o) {
-            return typeof o;
-          }
-        : function (o) {
-            return o &&
-              "function" == typeof Symbol &&
-              o.constructor === Symbol &&
-              o !== Symbol.prototype
-              ? "symbol"
-              : typeof o;
-          }),
-    _typeof(o)
-  );
-}
+function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
 Object.defineProperty(exports, "__esModule", {
-  value: true,
+  value: true
 });
 exports["default"] = exports.StatusList = void 0;
 var _react = _interopRequireWildcard(require("react"));
@@ -30,133 +12,16 @@ var _utils = require("../utils");
 var _enums = require("../enums");
 var _Status = _interopRequireDefault(require("../Status"));
 var _settings = require("../settings");
-var _excluded = [
-  "className",
-  "children",
-  "size",
-  "selected",
-  "onChange",
-  "itemsTabIndex",
-];
-function _interopRequireDefault(obj) {
-  return obj && obj.__esModule ? obj : { default: obj };
-}
-function _getRequireWildcardCache(nodeInterop) {
-  if (typeof WeakMap !== "function") return null;
-  var cacheBabelInterop = new WeakMap();
-  var cacheNodeInterop = new WeakMap();
-  return (_getRequireWildcardCache = function _getRequireWildcardCache(
-    nodeInterop
-  ) {
-    return nodeInterop ? cacheNodeInterop : cacheBabelInterop;
-  })(nodeInterop);
-}
-function _interopRequireWildcard(obj, nodeInterop) {
-  if (!nodeInterop && obj && obj.__esModule) {
-    return obj;
-  }
-  if (
-    obj === null ||
-    (_typeof(obj) !== "object" && typeof obj !== "function")
-  ) {
-    return { default: obj };
-  }
-  var cache = _getRequireWildcardCache(nodeInterop);
-  if (cache && cache.has(obj)) {
-    return cache.get(obj);
-  }
-  var newObj = {};
-  var hasPropertyDescriptor =
-    Object.defineProperty && Object.getOwnPropertyDescriptor;
-  for (var key in obj) {
-    if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) {
-      var desc = hasPropertyDescriptor
-        ? Object.getOwnPropertyDescriptor(obj, key)
-        : null;
-      if (desc && (desc.get || desc.set)) {
-        Object.defineProperty(newObj, key, desc);
-      } else {
-        newObj[key] = obj[key];
-      }
-    }
-  }
-  newObj["default"] = obj;
-  if (cache) {
-    cache.set(obj, newObj);
-  }
-  return newObj;
-}
-function _extends() {
-  _extends = Object.assign
-    ? Object.assign.bind()
-    : function (target) {
-        for (var i = 1; i < arguments.length; i++) {
-          var source = arguments[i];
-          for (var key in source) {
-            if (Object.prototype.hasOwnProperty.call(source, key)) {
-              target[key] = source[key];
-            }
-          }
-        }
-        return target;
-      };
-  return _extends.apply(this, arguments);
-}
-function _defineProperty(obj, key, value) {
-  key = _toPropertyKey(key);
-  if (key in obj) {
-    Object.defineProperty(obj, key, {
-      value: value,
-      enumerable: true,
-      configurable: true,
-      writable: true,
-    });
-  } else {
-    obj[key] = value;
-  }
-  return obj;
-}
-function _toPropertyKey(arg) {
-  var key = _toPrimitive(arg, "string");
-  return _typeof(key) === "symbol" ? key : String(key);
-}
-function _toPrimitive(input, hint) {
-  if (_typeof(input) !== "object" || input === null) return input;
-  var prim = input[Symbol.toPrimitive];
-  if (prim !== undefined) {
-    var res = prim.call(input, hint || "default");
-    if (_typeof(res) !== "object") return res;
-    throw new TypeError("@@toPrimitive must return a primitive value.");
-  }
-  return (hint === "string" ? String : Number)(input);
-}
-function _objectWithoutProperties(source, excluded) {
-  if (source == null) return {};
-  var target = _objectWithoutPropertiesLoose(source, excluded);
-  var key, i;
-  if (Object.getOwnPropertySymbols) {
-    var sourceSymbolKeys = Object.getOwnPropertySymbols(source);
-    for (i = 0; i < sourceSymbolKeys.length; i++) {
-      key = sourceSymbolKeys[i];
-      if (excluded.indexOf(key) >= 0) continue;
-      if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue;
-      target[key] = source[key];
-    }
-  }
-  return target;
-}
-function _objectWithoutPropertiesLoose(source, excluded) {
-  if (source == null) return {};
-  var target = {};
-  var sourceKeys = Object.keys(source);
-  var key, i;
-  for (i = 0; i < sourceKeys.length; i++) {
-    key = sourceKeys[i];
-    if (excluded.indexOf(key) >= 0) continue;
-    target[key] = source[key];
-  }
-  return target;
-}
+var _excluded = ["className", "children", "size", "selected", "onChange", "itemsTabIndex"];
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
+function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || _typeof(obj) !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+function _defineProperty(obj, key, value) { key = _toPropertyKey(key); if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+function _toPropertyKey(arg) { var key = _toPrimitive(arg, "string"); return _typeof(key) === "symbol" ? key : String(key); }
+function _toPrimitive(input, hint) { if (_typeof(input) !== "object" || input === null) return input; var prim = input[Symbol.toPrimitive]; if (prim !== undefined) { var res = prim.call(input, hint || "default"); if (_typeof(res) !== "object") return res; throw new TypeError("@@toPrimitive must return a primitive value."); } return (hint === "string" ? String : Number)(input); }
+function _objectWithoutProperties(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
+function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 function StatusListInner(_ref, ref) {
   var className = _ref.className,
     children = _ref.children,
@@ -180,73 +45,53 @@ function StatusListInner(_ref, ref) {
         if (typeof directChild[idx] !== "undefined") {
           directChild[idx].focus();
         }
-      },
+      }
     };
   });
   var tabIndex = itemsTabIndex;
-  return /*#__PURE__*/ _react["default"].createElement(
-    "ul",
-    _extends(
-      {
-        ref: listRef,
-      },
-      rest,
-      {
-        className: (0, _classnames["default"])(
-          cName,
-          className,
-          _defineProperty({}, "".concat(cName, "--").concat(size), size)
-        ),
-      }
-    ),
-    _react["default"].Children.map(children, function (item) {
-      // If active argument is set, clear active flag for all elements except desired
-      var newProps = {};
-      if (selected) {
-        newProps.selected = item.props.status === selected;
-      }
-      if (onChange) {
-        newProps.onClick = function (evt) {
-          onChange(item.props.status);
-          if (item.onClick) {
-            item.onClick(evt);
-          }
-        };
-      }
-      var onKeyPress = function onKeyPress(evt) {
-        if (onChange) {
-          if (
-            evt.key === "Enter" &&
-            evt.shiftKey === false &&
-            evt.altKey === false
-          ) {
-            onChange(item.props.status);
-          }
+  return /*#__PURE__*/_react["default"].createElement("ul", _extends({
+    ref: listRef
+  }, rest, {
+    className: (0, _classnames["default"])(cName, className, _defineProperty({}, "".concat(cName, "--").concat(size), size))
+  }), _react["default"].Children.map(children, function (item) {
+    // If active argument is set, clear active flag for all elements except desired
+    var newProps = {};
+    if (selected) {
+      newProps.selected = item.props.status === selected;
+    }
+    if (onChange) {
+      newProps.onClick = function (evt) {
+        onChange(item.props.status);
+        if (item.onClick) {
+          item.onClick(evt);
         }
       };
-      var tIndex = (function () {
-        if (typeof tabIndex === "number") {
-          if (tabIndex > 0) {
-            return tabIndex++;
-          } else {
-            return tabIndex;
-          }
-        } else {
-          return undefined;
+    }
+    var onKeyPress = function onKeyPress(evt) {
+      if (onChange) {
+        if (evt.key === "Enter" && evt.shiftKey === false && evt.altKey === false) {
+          onChange(item.props.status);
         }
-      })();
-      return /*#__PURE__*/ _react["default"].createElement(
-        "li",
-        {
-          tabIndex: tIndex,
-          onKeyPress: onKeyPress,
-        },
-        /*#__PURE__*/ _react["default"].cloneElement(item, newProps)
-      );
-    })
-  );
+      }
+    };
+    var tIndex = function () {
+      if (typeof tabIndex === "number") {
+        if (tabIndex > 0) {
+          return tabIndex++;
+        } else {
+          return tabIndex;
+        }
+      } else {
+        return undefined;
+      }
+    }();
+    return /*#__PURE__*/_react["default"].createElement("li", {
+      tabIndex: tIndex,
+      onKeyPress: onKeyPress
+    }, /*#__PURE__*/_react["default"].cloneElement(item, newProps));
+  }));
 }
-var StatusList = /*#__PURE__*/ (0, _react.forwardRef)(StatusListInner);
+var StatusList = /*#__PURE__*/(0, _react.forwardRef)(StatusListInner);
 exports.StatusList = StatusList;
 StatusList.displayName = "StatusList";
 StatusList.propTypes = {
@@ -266,13 +111,11 @@ StatusList.propTypes = {
   /** Additional classes. */
   className: _propTypes["default"].string,
   /** onChange handler */
-  onChange: _propTypes["default"].func,
+  onChange: _propTypes["default"].func
 };
-process.env.NODE_ENV !== "production"
-  ? (StatusListInner.propTypes = StatusList.propTypes)
-  : void 0;
+process.env.NODE_ENV !== "production" ? StatusListInner.propTypes = StatusList.propTypes : void 0;
 StatusList.defaultProps = {
-  onChange: _utils.noop,
+  onChange: _utils.noop
 };
 StatusListInner.defaultProps = StatusList.defaultProps;
 var _default = StatusList;

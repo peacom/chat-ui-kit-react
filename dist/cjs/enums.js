@@ -1,19 +1,10 @@
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
-  value: true,
+  value: true
 });
-exports[
-  "default"
-] = exports.StatusEnum = exports.SizeEnum = exports.MessageTypeEnum = void 0;
-var StatusEnum = [
-  "available",
-  "unavailable",
-  "away",
-  "dnd",
-  "invisible",
-  "eager",
-];
+exports["default"] = exports.StatusEnum = exports.SizeEnum = exports.MessageTypeEnum = void 0;
+var StatusEnum = ["available", "unavailable", "away", "dnd", "invisible", "eager"];
 exports.StatusEnum = StatusEnum;
 var SizeEnum = ["xs", "sm", "md", "lg", "fluid"];
 exports.SizeEnum = SizeEnum;
@@ -22,6 +13,6 @@ exports.MessageTypeEnum = MessageTypeEnum;
 var _default = {
   SizeEnum: SizeEnum,
   StatusEnum: StatusEnum,
-  MessageTypeEnum: MessageTypeEnum,
+  MessageTypeEnum: MessageTypeEnum
 };
 exports["default"] = _default;

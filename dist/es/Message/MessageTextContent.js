@@ -8,24 +8,18 @@ export var MessageTextContent = function MessageTextContent(_ref) {
     children = _ref.children;
   var cName = "".concat(prefix, "-message__text-content");
   var content = children !== null && children !== void 0 ? children : text;
-  return /*#__PURE__*/ React.createElement(
-    "div",
-    {
-      className: classNames(cName, className),
-    },
-    content
-  );
+  return /*#__PURE__*/React.createElement("div", {
+    className: classNames(cName, className)
+  }, content);
 };
 MessageTextContent.displayName = "Message.TextContent";
-process.env.NODE_ENV !== "production"
-  ? (MessageTextContent.propTypes = {
-      /** Primary content - message text */
-      children: PropTypes.string,
-      /** Message text. Property has precedence over children */
-      text: PropTypes.string,
-      /** Additional classes. */
-      className: PropTypes.string,
-    })
-  : void 0;
+process.env.NODE_ENV !== "production" ? MessageTextContent.propTypes = {
+  /** Primary content - message text */
+  children: PropTypes.string,
+  /** Message text. Property has precedence over children */
+  text: PropTypes.string,
+  /** Additional classes. */
+  className: PropTypes.string
+} : void 0;
 MessageTextContent.defaultProps = {};
 export default MessageTextContent;

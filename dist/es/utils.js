@@ -1,77 +1,9 @@
-function ownKeys(e, r) {
-  var t = Object.keys(e);
-  if (Object.getOwnPropertySymbols) {
-    var o = Object.getOwnPropertySymbols(e);
-    r &&
-      (o = o.filter(function (r) {
-        return Object.getOwnPropertyDescriptor(e, r).enumerable;
-      })),
-      t.push.apply(t, o);
-  }
-  return t;
-}
-function _objectSpread(e) {
-  for (var r = 1; r < arguments.length; r++) {
-    var t = null != arguments[r] ? arguments[r] : {};
-    r % 2
-      ? ownKeys(Object(t), !0).forEach(function (r) {
-          _defineProperty(e, r, t[r]);
-        })
-      : Object.getOwnPropertyDescriptors
-      ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(t))
-      : ownKeys(Object(t)).forEach(function (r) {
-          Object.defineProperty(e, r, Object.getOwnPropertyDescriptor(t, r));
-        });
-  }
-  return e;
-}
-function _defineProperty(obj, key, value) {
-  key = _toPropertyKey(key);
-  if (key in obj) {
-    Object.defineProperty(obj, key, {
-      value: value,
-      enumerable: true,
-      configurable: true,
-      writable: true,
-    });
-  } else {
-    obj[key] = value;
-  }
-  return obj;
-}
-function _toPropertyKey(arg) {
-  var key = _toPrimitive(arg, "string");
-  return _typeof(key) === "symbol" ? key : String(key);
-}
-function _toPrimitive(input, hint) {
-  if (_typeof(input) !== "object" || input === null) return input;
-  var prim = input[Symbol.toPrimitive];
-  if (prim !== undefined) {
-    var res = prim.call(input, hint || "default");
-    if (_typeof(res) !== "object") return res;
-    throw new TypeError("@@toPrimitive must return a primitive value.");
-  }
-  return (hint === "string" ? String : Number)(input);
-}
-function _typeof(o) {
-  "@babel/helpers - typeof";
-  return (
-    (_typeof =
-      "function" == typeof Symbol && "symbol" == typeof Symbol.iterator
-        ? function (o) {
-            return typeof o;
-          }
-        : function (o) {
-            return o &&
-              "function" == typeof Symbol &&
-              o.constructor === Symbol &&
-              o !== Symbol.prototype
-              ? "symbol"
-              : typeof o;
-          }),
-    _typeof(o)
-  );
-}
+function ownKeys(e, r) { var t = Object.keys(e); if (Object.getOwnPropertySymbols) { var o = Object.getOwnPropertySymbols(e); r && (o = o.filter(function (r) { return Object.getOwnPropertyDescriptor(e, r).enumerable; })), t.push.apply(t, o); } return t; }
+function _objectSpread(e) { for (var r = 1; r < arguments.length; r++) { var t = null != arguments[r] ? arguments[r] : {}; r % 2 ? ownKeys(Object(t), !0).forEach(function (r) { _defineProperty(e, r, t[r]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(t)) : ownKeys(Object(t)).forEach(function (r) { Object.defineProperty(e, r, Object.getOwnPropertyDescriptor(t, r)); }); } return e; }
+function _defineProperty(obj, key, value) { key = _toPropertyKey(key); if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+function _toPropertyKey(arg) { var key = _toPrimitive(arg, "string"); return _typeof(key) === "symbol" ? key : String(key); }
+function _toPrimitive(input, hint) { if (_typeof(input) !== "object" || input === null) return input; var prim = input[Symbol.toPrimitive]; if (prim !== undefined) { var res = prim.call(input, hint || "default"); if (_typeof(res) !== "object") return res; throw new TypeError("@@toPrimitive must return a primitive value."); } return (hint === "string" ? String : Number)(input); }
+function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
 import React from "react";
 
 /* eslint-disable  @typescript-eslint/no-empty-function */
@@ -83,11 +15,7 @@ export var noop = function noop() {};
  * @returns {Boolean}
  */
 export var isChildrenNil = function isChildrenNil(children) {
-  return (
-    children === null ||
-    children === undefined ||
-    (Array.isArray(children) && children.length === 0)
-  );
+  return children === null || children === undefined || Array.isArray(children) && children.length === 0;
 };
 
 /**
@@ -107,34 +35,15 @@ export var getChildren = function getChildren(children, types) {
       ret[idx] = item;
     } else {
       var _item$props$as, _item$props, _item$props2;
-      var is =
-        (_item$props$as =
-          item === null || item === void 0
-            ? void 0
-            : (_item$props = item.props) === null || _item$props === void 0
-            ? void 0
-            : _item$props.as) !== null && _item$props$as !== void 0
-          ? _item$props$as
-          : item === null || item === void 0
-          ? void 0
-          : (_item$props2 = item.props) === null || _item$props2 === void 0
-          ? void 0
-          : _item$props2.is;
+      var is = (_item$props$as = item === null || item === void 0 ? void 0 : (_item$props = item.props) === null || _item$props === void 0 ? void 0 : _item$props.as) !== null && _item$props$as !== void 0 ? _item$props$as : item === null || item === void 0 ? void 0 : (_item$props2 = item.props) === null || _item$props2 === void 0 ? void 0 : _item$props2.is;
       var typeofIs = _typeof(is);
       if (typeofIs === "function") {
         // Type
         var fIdx = types.indexOf(is);
         if (fIdx !== -1) {
-          ret[fIdx] = /*#__PURE__*/ React.cloneElement(
-            item,
-            _objectSpread(
-              _objectSpread({}, item.props),
-              {},
-              {
-                as: null,
-              }
-            )
-          ); // Cloning to remove "as" attribute, which is not desirable
+          ret[fIdx] = /*#__PURE__*/React.cloneElement(item, _objectSpread(_objectSpread({}, item.props), {}, {
+            as: null
+          })); // Cloning to remove "as" attribute, which is not desirable
         }
       } else if (typeofIs === "object") {
         // forward ref
@@ -142,16 +51,9 @@ export var getChildren = function getChildren(children, types) {
         var typeName = is.name || is.displayName;
         var tIdx = strTypes.indexOf(typeName);
         if (tIdx !== -1) {
-          ret[tIdx] = /*#__PURE__*/ React.cloneElement(
-            item,
-            _objectSpread(
-              _objectSpread({}, item.props),
-              {},
-              {
-                as: null,
-              }
-            )
-          ); // Cloning to remove "as" attribute, which is not desirable
+          ret[tIdx] = /*#__PURE__*/React.cloneElement(item, _objectSpread(_objectSpread({}, item.props), {}, {
+            as: null
+          })); // Cloning to remove "as" attribute, which is not desirable
         }
       } else if (typeofIs === "string") {
         var sIdx = strTypes.indexOf(is);
@@ -202,26 +104,14 @@ export var allowedChildren = function allowedChildren(allowedTypes) {
     // and can be antipattern: https://americanexpress.io/faccs-are-an-antipattern/
     // But we don't check fd function is passed as children and its intentional
     // Passing function as children has no effect in chat-ui-kit
-    var forbidden = React.Children.toArray(props[propName]).find(function (
-      item
-    ) {
+    var forbidden = React.Children.toArray(props[propName]).find(function (item) {
       if (typeof item === "string" && item.trim().length === 0) {
         // Ignore string
         return false;
       }
       if (allowedTypes.indexOf(item.type) === -1) {
         var _item$props3, _item$props4;
-        var is =
-          (item === null || item === void 0
-            ? void 0
-            : (_item$props3 = item.props) === null || _item$props3 === void 0
-            ? void 0
-            : _item$props3.as) ||
-          (item === null || item === void 0
-            ? void 0
-            : (_item$props4 = item.props) === null || _item$props4 === void 0
-            ? void 0
-            : _item$props4.is);
+        var is = (item === null || item === void 0 ? void 0 : (_item$props3 = item.props) === null || _item$props3 === void 0 ? void 0 : _item$props3.as) || (item === null || item === void 0 ? void 0 : (_item$props4 = item.props) === null || _item$props4 === void 0 ? void 0 : _item$props4.is);
         var typeofIs = _typeof(is);
         if (typeofIs === "function") {
           // Type
@@ -240,15 +130,10 @@ export var allowedChildren = function allowedChildren(allowedTypes) {
     });
     if (typeof forbidden !== "undefined") {
       var typeName = getComponentName(forbidden);
-      var allowedNames = allowedTypes
-        .map(function (t) {
-          return t.name || t.displayName;
-        })
-        .join(", ");
-      var errMessage = '"'
-        .concat(typeName, '" is not a valid child for ')
-        .concat(componentName, ". Allowed types: ")
-        .concat(allowedNames);
+      var allowedNames = allowedTypes.map(function (t) {
+        return t.name || t.displayName;
+      }).join(", ");
+      var errMessage = "\"".concat(typeName, "\" is not a valid child for ").concat(componentName, ". Allowed types: ").concat(allowedNames);
       return new Error(errMessage);
     }
   };

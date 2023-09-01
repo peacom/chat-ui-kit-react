@@ -8,24 +8,22 @@ export var MessageHtmlContent = function MessageHtmlContent(_ref) {
   var cName = "".concat(prefix, "-message__html-content");
   var createMarkup = function createMarkup() {
     return {
-      __html: html,
+      __html: html
     };
   };
-  return /*#__PURE__*/ React.createElement("div", {
+  return /*#__PURE__*/React.createElement("div", {
     className: classNames(cName, className),
-    dangerouslySetInnerHTML: createMarkup(),
+    dangerouslySetInnerHTML: createMarkup()
   });
 };
 MessageHtmlContent.displayName = "Message.HtmlContent";
-process.env.NODE_ENV !== "production"
-  ? (MessageHtmlContent.propTypes = {
-      /**
-       * Html string will be rendered in component using dangerouslySetInnerHTML
-       */
-      html: PropTypes.string,
-      /** Additional classes. */
-      className: PropTypes.string,
-    })
-  : void 0;
+process.env.NODE_ENV !== "production" ? MessageHtmlContent.propTypes = {
+  /**
+   * Html string will be rendered in component using dangerouslySetInnerHTML
+   */
+  html: PropTypes.string,
+  /** Additional classes. */
+  className: PropTypes.string
+} : void 0;
 MessageHtmlContent.defaultProps = {};
 export default MessageHtmlContent;
